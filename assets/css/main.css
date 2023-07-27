@@ -6,9 +6,14 @@
   width: 100%;
 }
 /* Responsive iFrame for calendar*/
+@media (min-width: 550px) {
+  .responsive-iframe-container {padding-bottom: 75%;}
+}
+@media (max-width: 550px) {
+  .responsive-iframe-container {padding-bottom: 150%;}
+}
 .responsive-iframe-container {
   position: relative;
-  padding-bottom: 75%;
   padding-top: 0;
   height: 0;
   overflow: hidden;
