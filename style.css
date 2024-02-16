@@ -1,0 +1,272 @@
+/* user styles
+
+/* styles are what change the color and sizes of stuff on your site. */
+
+/* these are variables that are being used in the code
+these tended to confuse some people, so I only kept
+the images as variables */
+
+
+:root {
+    /* colors */
+    --bg-color: #eff1f2;
+    --page-color: #ffffff;
+    --accent-color-1: #96cbf3;
+    --accent-color-2: #9fa3a6;
+    --main-text-color: #9fa3a6;
+    --title-text-color: #000000;
+}
+
+/* if you have the URL of a font, you can set it below */
+/* feel free to delete this if it's not your vibe */
+
+/* this seems like a lot for just one font and I would have to agree
+but I wanted to include an example of how to include a custom font.
+If you download a font file you can upload it onto your Neocities
+and then link it! Many fonts have separate files for each style
+(bold, italic, etc. T_T) which is why there are so many!
+
+*/
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Open+Sans');
+}
+
+@font-face {
+    font-family: 'Roboto Slab', serif;
+    src: url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+}
+
+@font-face {
+    font-family: 'Fira Mono', monospace;
+    src: url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Fira Mono', monospace; */
+    margin: 0;
+    font-size: 20px;
+    /* background-color: #08031A; */
+    background-color: var(--bg-color);
+    /* you can delete the line below if you'd prefer to not use an image */
+    /* background-size: 65px; */
+    /* color: #fceaff; */
+    color: var(--main-text-color);
+    /* background-image: var(--body-bg-image); */
+}
+
+h1 {
+    font-size: 50px;
+    color: var(--title-text-color);
+}
+
+.subtitle {
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 25px;
+    color: var(--title-text-color);
+}
+
+
+/* the "container" is what wraps your entire website */
+/* if you want something (like the header) to be Wider than
+the other elements, you will need to move that div outside
+of the container */
+.container {
+    max-width: 900px;
+    /* this is the width of your layout! */
+    /* if you change the above value, scroll to the bottom
+    and change the media query according to the comment! */
+    margin: 0 auto;
+    /* this centers the entire page */
+    display:flex;
+    flex-wrap:wrap;
+}
+
+/* the area below is for all links on your page
+EXCEPT for the navigation */
+.container a {
+    /* color: #ED64F5; */
+    color: var(--accent-color-1);
+    font-weight: bold;
+    text-decoration: underline;
+}
+a:hover {
+    /* color: #a49cba; */
+    color: var(--console-hover);
+    text-decoration: underline;
+}
+
+#header-area {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: var(--page-color);
+    height: 150px;
+    /* this is only for a background image! */
+    /* if you want to put images IN the header,
+    you can add them directly to the <div id="header"></div> element! */
+    /* background-image: var(--header-image); */
+    /* background-size: 100%; */
+}
+
+/* navigation section!! */
+#navbar {
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    background-color: var(--page-color);
+    /* navbar color */
+    width: 100%;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar li {
+    padding-top: 10px;
+}
+
+/* navigation links */
+#navbar li a {
+    /* color: #ED64F5; */
+    color: var(--accent-color-2);
+    /* navbar text color */
+    font-weight: 800;
+    /* text-decoration: none; */
+    /* this removes the underline */
+}
+
+/* navigation link when a link is hovered over */
+#navbar li a:hover {
+    /* color: #a49cba; */
+    color: var(--accent-color-1);
+    text-decoration: underline;
+}
+
+.right-sidebar {
+    /* background-color: #241445; */
+    background-color: var(--bg-color);
+    width: 200px;
+    /* padding: 20px; */
+    font-size: smaller;
+    /* this makes the sidebar text slightly smaller */
+}
+
+/* this is the color of the main content area,
+between the sidebars! */
+main {
+    /* background-color: #43256E; */
+    background-color: var(--page-color);
+    flex: 1;
+    padding: 20px;
+    /* order: 2; */
+}
+
+/* main img {
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+footer {
+    /* background-color: #13092D; */
+    background-color: var(--bg-color);
+    /* background color for footer */
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    /* this centers the footer text */
+}
+
+#topBar {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    font-size: smaller;
+    background-color: #13092D;
+}
+
+/* columns (mobile) */
+.container > * {
+    width:100%;
+    padding:1rem;
+}
+
+.link-header {
+    display: flex;
+    /* Used to allow flexbox to place content on right & left */
+    justify-content: space-between;
+}
+
+.link-header > a {
+    padding: 10px;
+}
+
+/* tablet breakpoint */
+@media (min-width:768px) {
+    .container > .right-sidebar {
+        width:calc(100% / 3);
+    }
+    .container > .main-content {
+        /* width:calc(100%); */
+        width:calc(100% / 3 * 2);
+    }
+    #navbar ul {
+        flex-wrap: wrap;
+    }
+}
+
+  /*////////////////*/
+ /* DoodleBot Page */
+/*////////////////*/
+
+/* Apply to all children of doodlebot div class */
+.doodlebot > div {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+textarea {
+    background-color: var(--console-trans);
+    color: var(--console-highlights);
+    /* outline: solid var(--console-highlights); */
+    border: 1px solid var(--console-highlights);
+    outline-color: var(--console-highlights);
+    outline: 2px var(--console-highlights);
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    margin: 5px;
+    resize: vertical;
+}
+
+.doodlebot button {
+    /* display: block; */
+    font-family: 'Fira mono', monospace;
+    border: 1px solid var(--console-highlights);
+    background-color: var(--console-trans);
+    color: var(--console-highlights);
+    padding: 10px;
+    margin: 5px;
+    width: 50%;
+}
+
+.doodlebot button:hover {
+    outline: 2px solid var(--console-highlights);
+}
+
+#doodlebot-label {
+    padding: 20px;
+}
