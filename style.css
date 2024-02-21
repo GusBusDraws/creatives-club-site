@@ -73,7 +73,6 @@ h2 {
     color: var(--title-text-color);
 }
 
-
 /* the "container" is what wraps your entire website */
 /* if you want something (like the header) to be Wider than
 the other elements, you will need to move that div outside
@@ -108,7 +107,7 @@ a:hover {
     padding: 0;
     margin: 0;
     background-color: var(--page-color);
-    height: 150px;
+    /* height: 150px; */
     /* this is only for a background image! */
     /* if you want to put images IN the header,
     you can add them directly to the <div id="header"></div> element! */
@@ -120,8 +119,8 @@ a:hover {
 #navbar {
     padding: 0;
     margin: 0;
-    height: 40px;
-    background-color: var(--page-color);
+    height: 50px;
+    background-color: var(--accent-color-1);
     /* navbar color */
     width: 100%;
 }
@@ -140,19 +139,49 @@ a:hover {
 
 /* navigation links */
 #navbar li a {
-    /* color: #ED64F5; */
-    color: var(--accent-color-2);
     /* navbar text color */
+    color: var(--page-color);
     font-weight: 800;
-    /* text-decoration: none; */
     /* this removes the underline */
+    text-decoration: none;
 }
 
 /* navigation link when a link is hovered over */
 #navbar li a:hover {
     /* color: #a49cba; */
-    color: var(--accent-color-1);
+    color: var(--title-text-color);
     text-decoration: underline;
+}
+
+.icon-bar {
+    /* black bar */
+    background-color: var(--title-text-color);
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.icon-bar ul {
+    display: flex;
+    padding: 10px;
+    margin: 0;
+    list-style-type: none;
+    justify-content: right;
+    height: 60%;
+    /* border: 1px solid red; */
+}
+
+.icon-bar li {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    /* border: 1px solid white; */
+}
+
+.icon-bar img {
+    height: 100%;
+    /* border: 1px solid red; */
 }
 
 .right-sidebar {
@@ -161,7 +190,6 @@ a:hover {
     width: 200px;
     /* padding: 20px; */
     font-size: smaller;
-    /* this makes the sidebar text slightly smaller */
 }
 
 /* this is the color of the main content area,
@@ -174,43 +202,37 @@ main {
     /* order: 2; */
 }
 
+.full-width {
+    width: 100%;
+}
+
 /* main img {
     margin-left: auto;
     margin-right: auto;
 } */
 
-footer {
-    /* background-color: #13092D; */
-    background-color: var(--bg-color);
+#footer {
     /* background color for footer */
+    background-color: var(--accent-color-1);
+    color: var(--page-color);
+    height: 50px;
     width: 100%;
     padding: 10px;
     text-align: center;
-    /* this centers the footer text */
 }
 
-#topBar {
-    width: 100%;
-    height: 30px;
-    padding: 10px;
-    font-size: smaller;
-    background-color: #13092D;
+#footer a {
+    color: var(--page-color);
+}
+
+#footer a:hover {
+    color: var(--title-text-color);
 }
 
 /* columns (mobile) */
 .container > * {
     width:100%;
     padding:1rem;
-}
-
-.link-header {
-    display: flex;
-    /* Used to allow flexbox to place content on right & left */
-    justify-content: space-between;
-}
-
-.link-header > a {
-    padding: 10px;
 }
 
 /* tablet breakpoint */
@@ -227,46 +249,3 @@ footer {
     }
 }
 
-  /*////////////////*/
- /* DoodleBot Page */
-/*////////////////*/
-
-/* Apply to all children of doodlebot div class */
-.doodlebot > div {
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-}
-
-textarea {
-    background-color: var(--console-trans);
-    color: var(--console-highlights);
-    /* outline: solid var(--console-highlights); */
-    border: 1px solid var(--console-highlights);
-    outline-color: var(--console-highlights);
-    outline: 2px var(--console-highlights);
-    width: 100%;
-    height: 100px;
-    padding: 5px;
-    margin: 5px;
-    resize: vertical;
-}
-
-.doodlebot button {
-    /* display: block; */
-    font-family: 'Fira mono', monospace;
-    border: 1px solid var(--console-highlights);
-    background-color: var(--console-trans);
-    color: var(--console-highlights);
-    padding: 10px;
-    margin: 5px;
-    width: 50%;
-}
-
-.doodlebot button:hover {
-    outline: 2px solid var(--console-highlights);
-}
-
-#doodlebot-label {
-    padding: 20px;
-}
