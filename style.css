@@ -258,10 +258,33 @@ main {
     width: 100%;
 }
 
-/* main img {
-    margin-left: auto;
-    margin-right: auto;
-} */
+  /*///////////////*/
+ /* Calendar page */
+/*///////////////*/
+
+.responsive-iframe-container {
+    position: relative;
+    padding-top: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive iFrame for calendar*/
+@media (min-width: 550px) {
+    .responsive-iframe-container {padding-bottom: 75%;}
+}
+
+@media (max-width: 550px) {
+    .responsive-iframe-container {padding-bottom: 150%;}
+}
 
 #footer {
     /* background color for footer */
