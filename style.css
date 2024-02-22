@@ -15,6 +15,10 @@ the images as variables */
     --accent-color-2: #9fa3a6;
     --main-text-color: #9fa3a6;
     --title-text-color: #000000;
+    /* Default transparent border */
+    --debug-border: #ff000000;
+    /* Uncomment the line below to turn on red borders, helpful for debugging! */
+    /* --debug-border: #ff0000; */
 }
 
 /* if you have the URL of a font, you can set it below */
@@ -63,6 +67,7 @@ h1 {
 
 .subtitle {
     font-size: 20px;
+    color: var(--main-text-color);
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase;
     padding-bottom: 15px;
@@ -184,12 +189,59 @@ a:hover {
     /* border: 1px solid red; */
 }
 
-.right-sidebar {
-    /* background-color: #241445; */
-    background-color: var(--bg-color);
-    width: 200px;
-    /* padding: 20px; */
-    font-size: smaller;
+.home-main section {
+    border: 1px solid var(--debug-border);
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid var(--debug-border);
+}
+
+.intro-section {
+    display: flex;
+}
+
+.welcome-text {
+    border: 1px solid var(--debug-border);
+}
+
+.intro-section img {
+    max-width: 100%;
+    float: left;
+    /* margin-right: auto;
+    margin-left: auto; */
+}
+
+.described-images {
+    justify-content: space-between;
+    display: flex;
+    border: 1px solid var(--debug-border);
+}
+
+.described-images img {
+    height: 50px;
+}
+
+.flex-block {
+    /* width: 40%; */
+    flex: 1;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--debug-border);
+}
+
+.flex-block h2 {
+    text-align: center;
+}
+
+.text-span {
+    margin: 0;
+    padding: 0;
 }
 
 /* this is the color of the main content area,
@@ -217,12 +269,22 @@ main {
     color: var(--page-color);
     height: 50px;
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
+    /* vertical-align: middle; */
+}
+
+#footer p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #footer a {
     color: var(--page-color);
+    margin-top: 0;
+    padding-top: 0;
 }
 
 #footer a:hover {
@@ -235,17 +297,22 @@ main {
     padding:1rem;
 }
 
-/* tablet breakpoint */
-@media (min-width:768px) {
-    .container > .right-sidebar {
-        width:calc(100% / 3);
+@media (max-width:768px) {
+    /*  */
+    .intro-section {
+        flex-direction: column-reverse;
     }
-    .container > .main-content {
-        /* width:calc(100%); */
-        width:calc(100% / 3 * 2);
+    .center,
+    .welcome-text {
+        width: auto;
     }
-    #navbar ul {
-        flex-wrap: wrap;
+    /*  */
+    .described-images {
+        flex-direction: column;
+    }
+    .left-block,
+    .right-block {
+        width: auto;
     }
 }
 
