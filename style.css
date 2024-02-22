@@ -1,0 +1,341 @@
+/* user styles
+
+/* styles are what change the color and sizes of stuff on your site. */
+
+/* these are variables that are being used in the code
+these tended to confuse some people, so I only kept
+the images as variables */
+
+
+:root {
+    /* colors */
+    --bg-color: #eff1f2;
+    --page-color: #ffffff;
+    --accent-color-1: #96cbf3;
+    --accent-color-2: #9fa3a6;
+    --main-text-color: #9fa3a6;
+    --title-text-color: #000000;
+    /* Default transparent border */
+    --debug-border: #ff000000;
+    /* Uncomment the line below to turn on red borders, helpful for debugging! */
+    /* --debug-border: #ff0000; */
+}
+
+/* if you have the URL of a font, you can set it below */
+/* feel free to delete this if it's not your vibe */
+
+/* this seems like a lot for just one font and I would have to agree
+but I wanted to include an example of how to include a custom font.
+If you download a font file you can upload it onto your Neocities
+and then link it! Many fonts have separate files for each style
+(bold, italic, etc. T_T) which is why there are so many!
+
+*/
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Open+Sans');
+}
+
+@font-face {
+    font-family: 'Roboto Slab', serif;
+    src: url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+}
+
+@font-face {
+    font-family: 'Fira Mono', monospace;
+    src: url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Fira Mono', monospace; */
+    margin: 0;
+    font-size: 20px;
+    /* background-color: #08031A; */
+    background-color: var(--bg-color);
+    /* you can delete the line below if you'd prefer to not use an image */
+    /* background-size: 65px; */
+    /* color: #fceaff; */
+    color: var(--main-text-color);
+    /* background-image: var(--body-bg-image); */
+}
+
+h1 {
+    font-size: 50px;
+    color: var(--title-text-color);
+}
+
+.subtitle {
+    font-size: 20px;
+    color: var(--main-text-color);
+    font-family: 'Roboto Slab', serif;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 25px;
+    color: var(--title-text-color);
+}
+
+/* the "container" is what wraps your entire website */
+/* if you want something (like the header) to be Wider than
+the other elements, you will need to move that div outside
+of the container */
+.container {
+    max-width: 900px;
+    /* this is the width of your layout! */
+    /* if you change the above value, scroll to the bottom
+    and change the media query according to the comment! */
+    margin: 0 auto;
+    /* this centers the entire page */
+    display:flex;
+    flex-wrap:wrap;
+}
+
+/* the area below is for all links on your page
+EXCEPT for the navigation */
+.container a {
+    /* color: #ED64F5; */
+    color: var(--accent-color-1);
+    font-weight: bold;
+    text-decoration: underline;
+}
+a:hover {
+    /* color: #a49cba; */
+    color: var(--console-hover);
+    text-decoration: underline;
+}
+
+#header-area {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: var(--page-color);
+    /* height: 150px; */
+    /* this is only for a background image! */
+    /* if you want to put images IN the header,
+    you can add them directly to the <div id="header"></div> element! */
+    /* background-image: var(--header-image); */
+    /* background-size: 100%; */
+}
+
+/* navigation section!! */
+#navbar {
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    background-color: var(--accent-color-1);
+    /* navbar color */
+    width: 100%;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar li {
+    padding-top: 10px;
+}
+
+/* navigation links */
+#navbar li a {
+    /* navbar text color */
+    color: var(--page-color);
+    font-weight: 800;
+    /* this removes the underline */
+    text-decoration: none;
+}
+
+/* navigation link when a link is hovered over */
+#navbar li a:hover {
+    /* color: #a49cba; */
+    color: var(--title-text-color);
+    text-decoration: underline;
+}
+
+.icon-bar {
+    /* black bar */
+    background-color: var(--title-text-color);
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.icon-bar ul {
+    display: flex;
+    padding: 10px;
+    margin: 0;
+    list-style-type: none;
+    justify-content: right;
+    height: 60%;
+    /* border: 1px solid red; */
+}
+
+.icon-bar li {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    /* border: 1px solid white; */
+}
+
+.icon-bar img {
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.home-main section {
+    border: 1px solid var(--debug-border);
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid var(--debug-border);
+}
+
+.intro-section {
+    display: flex;
+}
+
+.welcome-text {
+    border: 1px solid var(--debug-border);
+}
+
+.intro-section img {
+    max-width: 100%;
+    float: left;
+    /* margin-right: auto;
+    margin-left: auto; */
+}
+
+.described-images {
+    justify-content: space-between;
+    display: flex;
+    border: 1px solid var(--debug-border);
+}
+
+.described-images img {
+    height: 50px;
+}
+
+.flex-block {
+    /* width: 40%; */
+    flex: 1;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--debug-border);
+}
+
+.flex-block h2 {
+    text-align: center;
+}
+
+.text-span {
+    margin: 0;
+    padding: 0;
+}
+
+/* this is the color of the main content area,
+between the sidebars! */
+main {
+    /* background-color: #43256E; */
+    background-color: var(--page-color);
+    flex: 1;
+    padding: 20px;
+    /* order: 2; */
+}
+
+.full-width {
+    width: 100%;
+}
+
+  /*///////////////*/
+ /* Calendar page */
+/*///////////////*/
+
+.responsive-iframe-container {
+    position: relative;
+    padding-top: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive iFrame for calendar*/
+@media (min-width: 550px) {
+    .responsive-iframe-container {padding-bottom: 75%;}
+}
+
+@media (max-width: 550px) {
+    .responsive-iframe-container {padding-bottom: 150%;}
+}
+
+#footer {
+    /* background color for footer */
+    background-color: var(--accent-color-1);
+    color: var(--page-color);
+    height: 50px;
+    width: 100%;
+    /* padding: 10px; */
+    text-align: center;
+    /* vertical-align: middle; */
+}
+
+#footer p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#footer a {
+    color: var(--page-color);
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#footer a:hover {
+    color: var(--title-text-color);
+}
+
+/* columns (mobile) */
+.container > * {
+    width:100%;
+    padding:1rem;
+}
+
+@media (max-width:768px) {
+    /*  */
+    .intro-section {
+        flex-direction: column-reverse;
+    }
+    .center,
+    .welcome-text {
+        width: auto;
+    }
+    /*  */
+    .described-images {
+        flex-direction: column;
+    }
+    .left-block,
+    .right-block {
+        width: auto;
+    }
+}
+
