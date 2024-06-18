@@ -258,6 +258,10 @@ main {
     width: 100%;
 }
 
+#webring-tile h2 {
+    text-align: center;
+}
+
   /*///////////////*/
  /* Calendar page */
 /*///////////////*/
